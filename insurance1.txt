@@ -1,0 +1,7 @@
+(1).  create table User_Role(User_Name varchar(20) primary key,Password varchar(12),Role_Code varchar(10));
+
+(2).  create table Claim(Claim_Number number(10) primary key,Clain_Reason varchar(30),Accident_Location varchar(40),Accident_City varchar(15),Accident_State varchar(15),Accident_Zip number(5),Claim_Type varchar(30),Policy_Number number(10),constraint pn_fk foreign key(Policy_number) references Claim(Claim_Number));
+
+(3).   create table Policy(Policy_Number number(10) primary key,Account_Number number(10),constraint ac_fk foreign key(Account_Number) references Policy(Policy_Number));
+
+(4).   create table Policy_Details(Policy_Number Number(10),constraint pc_fk foreign key(Policy_Number) references Policy(Policy_Number),Question_ID varchar(15),Answer varchar2(30));
